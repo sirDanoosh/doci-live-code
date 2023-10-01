@@ -1,0 +1,124 @@
+.table-wrapper{
+    width: 100vw;
+    height: 100%;
+    position: relative;
+
+    &.--hasModal{
+        background-color: rgba(128, 128, 128,0.8);
+        overflow: hidden;
+        max-height: 100vh;
+        
+        .table{
+            z-index: -1;
+        }
+
+        .table-wrapper__heading{
+            z-index: -1;
+        }
+    }
+
+    &__heading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 2rem;
+        position: relative;
+
+        &__title{
+            margin-bottom: 2rem;
+        }
+    }
+
+    .table{
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-collapse: collapse;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 4px 4px 10px 0px #076263;
+        padding: 1rem;
+
+        &-row{
+            height: 3rem;
+
+            &.table__head{
+                height: 4rem;
+            }
+
+            &.--isSingle{
+                background-color: rgb(200, 200, 242);
+            }
+
+            .table-cell{
+                text-align: center;
+                font-size: 1rem;
+                color: rgb(26, 24, 11);
+                min-width: clamp(150px,16vw,20vw);
+
+                @media screen and (max-width: 780px){
+                    min-width: 19vw;
+                    max-width: 19vw;
+                }
+
+                .table__head__cell{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    font-size: 1.75rem;
+                    font-weight: bold;
+                    text-transform: capitalize;
+
+                    @media screen and (max-width: 780px) {
+                        font-size: 1.2rem;
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        font-size: 1rem;
+                    }
+
+                    img{
+                        width: 2rem;
+                        height: 2rem;
+
+                        @media screen and (max-width: 768px) {
+                            width: 1rem;
+                            height: 1rem;
+                        }
+                    }
+                    .table__head__sort{
+                        display: none;
+                    }
+                    .table__head__sort.--isActive{
+                        display: block;
+                        transform: rotate(0deg);
+
+                        .--reverse{
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            .table-cell:not(th){
+                border-top: 1px solid #076263;
+            }
+        }
+    }
+
+    .search-modal,.data-modal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+    }
+
+    .search-modal.--isOpen,.data-modal.--isOpen{
+        z-index: 1;
+    }
+}

@@ -1,0 +1,53 @@
+.form{
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 35vw;
+
+    &__title{
+        font-size: 2rem;
+        display: flex;
+        gap: 0.5rem;
+
+        span:nth-of-type(2){
+            color: gray;
+            text-transform: capitalize;
+        }
+    }
+
+    &__input{
+        height: 3rem;
+        border-radius: 1rem;
+        padding: 0 1rem;
+        border: 1px solid blue;
+        font-size: 1.5rem;
+    }
+
+    &__btn-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    button{
+        height: 3rem;
+        border-radius: 1rem;  
+        font-size: 1.5rem;
+        font-weight: bold;
+        flex: 1;
+    }
+
+    &__submit-btn{
+        border: 1px solid green;
+        background-color: rgba(0, 128, 0, 0.4);
+    }
+
+    &__close-btn{
+        border: 1px solid rgb(255, 165, 0);
+        background-color: rgba(255, 165, 0, 0.4);
+    }
+}

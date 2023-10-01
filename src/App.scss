@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 16px;
+
+    @media screen and (max-width: 760.5rem){
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 480px){
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: 320xp){
+        font-size: 11px;
+    }
+}
+
+body{
+    background-color: antiquewhite;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+}
